@@ -17,19 +17,22 @@ class DynamicArray{
   }
 
   public void insert(int index, String element){
-    if (index < 0 index > size){
+    if (index < 0  || index > size){
       throw new IndexOutOfBoundsException("Index out of bounds");
     }
     if(size == capacity){
       resize(2 * capacity);
     }
+    for (int i = size; i > index; i--) { // Shift elements to the right
+      array[i] = array[i - 1];
+    }
     array[index] = element;
     size++;
-    }
+  }
 
-  public void remove(int index){
-    if index < 0 index > = size{
-      throw new IndexOutOfBoundsException("Index out of bounds")
+  public String remove(int index){
+    if(index < 0 || index > size){
+      throw new IndexOutOfBoundsException("Index out of bounds");
     }
         return array[index];
   }
@@ -41,11 +44,12 @@ class DynamicArray{
   }
   private void resize(int newCapacity){
     String[] newArray = new String[newCapacity];
-    for(int=0;i<size;i++){
+    for(int i = 0;i<size;i++){
       newArray[i] = array[i];
     }
     array = newArray;
     capacity = newCapacity;
-  }
+  
   }
 
+}
