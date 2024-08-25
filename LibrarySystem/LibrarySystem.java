@@ -120,7 +120,7 @@ public class Main {
                     break;
                 case 3: 
                     System.out.print("Enter the book to return:");
-                    String returnTitle = scanner.nextLine();
+                    returnTitle = scanner.nextLine();
                     library.returnBook(returnTitle);
                     break;
                 case 4:
