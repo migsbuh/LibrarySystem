@@ -26,7 +26,7 @@ public class Book {
              isBorrowed = true ;
              System.out.println("You've borrowed \" " + title + "\"");
          } else {
-             System.out.println("Sorry, \ "" + title + "\" is already borrowed.");
+             System.out.println("Sorry, \"" + title + "\" is already borrowed.");
          }
     }
 
