@@ -1,3 +1,4 @@
+
 public class Book {
     private String title;
     private String author;
@@ -37,13 +38,13 @@ public class Book {
         } else {
             System.put.println("\"" + title + "\"wasn't borrowed .");
         }
-    ]
+        
 
     @Override
-    public String toString () {
+    public String toString() {
         return title +  " by " + author + (isBorrowed ? " [Borrowed] "  :  " [Available] ");
-    }
-}
+        }
+        
 
 class Library{
     private List<Book>books;
@@ -88,7 +89,7 @@ class Library{
 }    
 
 public class Main {
-    public static void main (String[] args) {
+    public void main (String[] args) {
         Library library = new Library();
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
@@ -141,4 +142,5 @@ public class Main {
 
         scanner.close();
     }
-}    
+}
+}

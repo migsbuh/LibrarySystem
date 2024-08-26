@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class LibraryTest extends JFrame{
     private LibraryInterface library;
 
@@ -12,7 +15,7 @@ public class LibraryTest extends JFrame{
 
 
       JButton addButton = new JButton("Add Book");
-      addButton.addActionListener(e-> {
+      addButton.addActionListener(e -> {
         String title = JOptionPane.showInputDialog("Enter book title:");
         String author = JOptionPane.showInputDialog("Enter book author:");
         if (title != null && author != null && !title.isEmpty() && !author.isEmpty()) {
@@ -22,11 +25,11 @@ public class LibraryTest extends JFrame{
       add(addButton);
 
 
-      JButton borrowButton = new JButton("Delete Book");
-      borrowButton.addActionListener(e -> {
-       String title = JOptionPane.showInputDialog("Enter book title to borrow:");
+      JButton deleteButton = new JButton("Delete Book");
+      deleteButton.addActionListener(e -> {
+       String title = JOptionPane.showInputDialog("Enter book title to delete:");
        if (title !=null && !title.isEmpty()) {
-           library.borrowBook(title);
+           library.deleteBook(title);
        }
       });
       add(borrowButton);
@@ -39,7 +42,7 @@ public class LibraryTest extends JFrame{
           }
       });
       add(returnButton);
-      
+
       JButton listButton = new JButton("List Books");
       listButton.addActionListener(e -> library.listAvailableBooks());
       add(listButton);
@@ -49,7 +52,7 @@ public class LibraryTest extends JFrame{
       add(exitButton);
   }
 
-    public static void main(String[] args) {
+ public static void main(String[] args) {
     SwingUtilities.invokeLater(() -> {
       LibraryTest app = new LibraryTest();
       app.setVisible(true);
